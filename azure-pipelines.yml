@@ -51,4 +51,4 @@ stages:
       - task: CmdLine@2
         displayName: 'Running e2e tests'
         inputs:
-          script: npm run test-e2e account-login/en
+          script: npm run test-e2e
