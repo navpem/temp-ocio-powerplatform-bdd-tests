@@ -7,9 +7,9 @@ stages:
   jobs:
   - job: load_tests
     timeoutInMinutes: 120
-    pool:
-      vmImage: 'ubuntu-latest'
-      name: highcpu
+    # pool:
+    #   vmImage: 'ubuntu-latest'
+    #   name: highcpu
     container:
       image: mcr.microsoft.com/playwright:focal
       
