@@ -52,5 +52,5 @@ stages:
       - task: CmdLine@2
         displayName: 'Running load tests'
         inputs:
-          script: npm run test-gen
+          script: npm run test-pipeline
 
