@@ -9,7 +9,7 @@
     "make-reviews": "review-from-saved capture",
     "test": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli test",
     "test-regressions": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true haibun-cli test regressions/",
-    "test-pipeline": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=3 HAIBUN_MEMBERS=64 haibun-cli test account-login/",
+    "test-pipeline": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=3 HAIBUN_MEMBERS=48 haibun-cli test account-login/",
     "test-lang": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli test lang/",
     "test-100x1": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=100 HAIBUN_MEMBERS=1 haibun-cli test",
     "test-2x2": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=2 HAIBUN_MEMBERS=2 haibun-cli test",
