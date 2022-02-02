@@ -4,7 +4,7 @@ resources:
     type: github
     endpoint: jaysonmc
     name: jaysonmc/temp-ocio-powerplatform-bdd-tests
-    ref: for-e2e-pipeline
+    ref: test-e2e
 
 variables:
 - name: HAIBUN_ENVC
