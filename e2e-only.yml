@@ -14,6 +14,7 @@ variables:
 trigger:
 - test-e2e
 
+
   jobs:
   - job: e2etests
 #    condition: eq(1,2)
