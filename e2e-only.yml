@@ -14,12 +14,8 @@ variables:
 trigger:
 - test-e2e
 
-
-  jobs:
+jobs:
   - job: e2etests
-#    condition: eq(1,2)
-    #dependsOn: Deployment
-    #condition: succeeded()
     timeoutInMinutes: 120
     pool:
         vmImage: 'ubuntu-latest'
