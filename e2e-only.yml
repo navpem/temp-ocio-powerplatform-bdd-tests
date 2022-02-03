@@ -34,7 +34,7 @@ jobs:
           continueOnError: true
           inputs:
             script: |
-              echo ENVC: 1 $(HAIBUN_ENVC) 2 ${{ HAIBUN_ENVC}}  3 ${{ variables }} 4 $(variables)
+              echo ENVC: 1 $(HAIBUN_ENVC) 2 ${{ HAIBUN_ENVC}}  3 ${{ variables }} 4 $(variables)              
               HAIBUN_ENVC=$(HAIBUN_ENVC) npm run test-pipeline
 
   - job: publish_e2e_artifacts
