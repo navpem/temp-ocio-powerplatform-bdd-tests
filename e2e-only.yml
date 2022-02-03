@@ -7,7 +7,6 @@ resources:
     ref: test-e2e
 
 variables:
-- name: HAIBUN_ENVC
 - name: HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO
 - name: HAIBUN_O_WEBPLAYWRIGHT_STEP_CAPTURE_SCREENSHOT
 
