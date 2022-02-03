@@ -29,7 +29,7 @@ jobs:
             command: 'install'
           displayName: 'installing dependencies'
 
-        - task: CmdLine@2  # using CmdLine instead of Npm because npm buffers the entire output
+        - task: Bash@3  # using CmdLine instead of Npm because npm buffers the entire output
           displayName: 'Running e2e tests'
           continueOnError: true
           inputs:
