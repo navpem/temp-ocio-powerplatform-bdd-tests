@@ -33,7 +33,9 @@ jobs:
           displayName: 'Running e2e tests'
           continueOnError: true
           inputs:
-            script: npm run test-pipeline
+            script: |
+              echo ENVC: ${HAIBUN_ENVC}
+              HAIBUN_ENVC=${HAIBUN_ENVC} npm run test-pipeline
 
   - job: publish_e2e_artifacts
     dependsOn: e2etests
