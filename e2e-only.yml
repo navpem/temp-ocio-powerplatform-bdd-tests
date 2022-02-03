@@ -6,10 +6,6 @@ resources:
     name: jaysonmc/temp-ocio-powerplatform-bdd-tests
     ref: test-e2e
 
-variables:
-- name: HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO
-- name: HAIBUN_O_WEBPLAYWRIGHT_STEP_CAPTURE_SCREENSHOT
-
 trigger:
 - test-e2e
 
