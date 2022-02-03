@@ -32,7 +32,8 @@ jobs:
         - task: CmdLine@2  # using CmdLine instead of Npm because npm buffers the entire output
           displayName: 'Running e2e tests'
           continueOnError: true
-        - bash: |
+          inputs:
+            script: |
               echo ENVC: $(HAIBUN_ENVC) .... ${HAIBUN_ENVC}
               HAIBUN_ENVC=$(HAIBUN_ENVC) npm run test-pipeline
 
