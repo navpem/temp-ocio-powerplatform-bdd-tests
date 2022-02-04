@@ -27,7 +27,7 @@ jobs:
         - task: CmdLine@2  # using CmdLine instead of Npm because npm buffers the entire output
           displayName: 'Running e2e tests'
           continueOnError: true
-          env: { HAIBUN_ENVC: HAIBUN_ENVC, HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO: HAIBUN_O_PLAYWRIGHT_CAPTURE_VIDEO, HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_SCREENSHOT: HAIBUN_O_PLAYWRIGHT_CAPTURE_SCREENSHOT}
+          env: { HAIBUN_ENVC: HAIBUN_ENVC, HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO: HAIBUN_O_PLAYWRIGHT_CAPTURE_VIDEO, HAIBUN_O_WEBPLAYWRIGHT_STEP_CAPTURE_SCREENSHOT: HAIBUN_O_PLAYWRIGHT_STEP_CAPTURE_SCREENSHOT}
           inputs:
             script: |
               npm run test-pipeline
