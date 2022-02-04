@@ -31,6 +31,7 @@ jobs:
           inputs:
             script: |
               npm run test-pipeline
+              ls -lat
 
   - job: publish_e2e_artifacts
     dependsOn: e2etests
