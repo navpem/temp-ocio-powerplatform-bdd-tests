@@ -45,3 +45,44 @@ jobs:
     condition: eq(dependencies.e2etests.result,'Succeeded')
     steps:
       - script: echo e2e tests passed, continuing.
+
+  - job: storage_Account
+    dependsOn: exit_if_failed
+    condition: eq(dependencies.e2etests.result,'Succeeded')
+    steps:
+      # Download the artifacts
+      - task: DownloadBuildArtifacts@0
+        inputs:
+          buildType: 'current'
+          downloadType: 'single'
+          artifactName: 'e2e_capture'
+          downloadPath: '$(Build.ArtifactStagingDirectory)'
+
+    # Upload to Storage Account
+      - task: AzureCLI@2
+        displayName: 'Upload files'
+        inputs:
+          azureSubscription: 'ocio-gcr2wp-testing-tools'
+          scriptType: pscore
+          scriptLocation: inlineScript
+          inlineScript: |
+            $StorageAccountName="stgcr2wptestresultreview"
+            $StorageAccountKey=""
+            # create path for the file
+            $foldername= "e2e-reviews"      
+            $ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName ` -StorageAccountKey $StorageAccountKey  
+            $s = New-AzureStorageShare $filesharename –Context $ctx # to create new file share
+            $localFileDirectory = "$env:BUILD_ARTIFACTSTAGGINGDIRECTORY"
+            $files = Get-ChildItem -Path $localFileDirectory -Recurse -File  
+            foreach($file in $files)  
+            {  
+                $localFile = $localFileDirectory+$file  
+                Set-AzureStorageFileContent –Share $s –Source $localFile  
+            }  
+              # if you don’t want them in the root folder of the share, but in a subfolder?  
+            New-AzureStorageDirectory –Share $s –Path $foldername
+            foreach($file in $files)  
+            {  
+                $localFile = $localFileDirectory+$file  
+                Set-AzureStorageFileContent –Share $s –Source $localFile –Path $foldername  
+            }  
